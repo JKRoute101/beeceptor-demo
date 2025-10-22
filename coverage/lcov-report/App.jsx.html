@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>15/35</span>
+                <span class='fraction'>20/35</span>
             </div>
         
             
@@ -161,7 +161,10 @@
 <a name='L96'></a><a href='#L96'>96</a>
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,12 +177,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -204,9 +207,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -214,12 +217,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -319,10 +325,13 @@ export default function App() {
 &nbsp;
   return (
     &lt;main&gt;
-      &lt;header style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}&gt;
-        &lt;h1&gt;Zendesk Demo Panel&lt;/h1&gt;
-        &lt;span className="badge"&gt;{state.toUpperCase()}&lt;/span&gt;
-      &lt;/header&gt;
+    &lt;header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}&gt;
+  &lt;h1&gt;Zendesk Demo Panel&lt;/h1&gt;
+  &lt;span role="status" aria-live="polite" className="badge"&gt;
+    {state.toUpperCase()}
+  &lt;/span&gt;
+&lt;/header&gt;
+&nbsp;
 &nbsp;
       &lt;div className="toolbar"&gt;
         &lt;button className="primary" onClick={fetchData}&gt;Fetch Order&lt;/button&gt;
@@ -333,11 +342,11 @@ export default function App() {
       {state === 'loading' &amp;&amp; &lt;p&gt;Loading…&lt;/p&gt;}
       {state === 'error' &amp;&amp; &lt;div className="alert" role="alert"&gt;{errorMsg}&lt;/div&gt;}
 &nbsp;
-      {state === 'ok' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >data </span>&amp;&amp; (
-<span class="branch-2 cbranch-no" title="branch not covered" >        &lt;section className="panel" aria-label="Order"&gt;</span>
-          &lt;p&gt;&lt;strong&gt;Order:&lt;/strong&gt; {data.orderId || '—'}&lt;/p&gt;
-          &lt;p&gt;&lt;strong&gt;Customer:&lt;/strong&gt; {data.customer || '—'}&lt;/p&gt;
-          &lt;p&gt;&lt;strong&gt;Items:&lt;/strong&gt; {data.items.length ? data.items.join(', ') : 'none'}&lt;/p&gt;
+      {state === 'ok' &amp;&amp; data &amp;&amp; (
+        &lt;section className="panel" aria-label="Order"&gt;
+          &lt;p&gt;&lt;strong&gt;Order:&lt;/strong&gt; {data.orderId || <span class="branch-1 cbranch-no" title="branch not covered" >'—'}</span>&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Customer:&lt;/strong&gt; {data.customer || <span class="branch-1 cbranch-no" title="branch not covered" >'—'}</span>&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;Items:&lt;/strong&gt; {data.items.length ? data.items.join(', ') : <span class="branch-1 cbranch-no" title="branch not covered" >'none'}</span>&lt;/p&gt;
         &lt;/section&gt;
       )}
 &nbsp;
@@ -364,7 +373,7 @@ export default function App() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-22T10:00:40.035Z
+                at 2025-10-22T12:16:27.089Z
             </div>
         <script src="prettify.js"></script>
         <script>

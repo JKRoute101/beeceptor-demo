@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1761127240052" clover="3.2.0">
-  <project timestamp="1761127240052" name="All files">
-    <metrics statements="33" coveredstatements="26" conditionals="35" coveredconditionals="15" methods="6" coveredmethods="4" elements="74" coveredelements="45" complexity="0" loc="33" ncloc="33" packages="1" files="1" classes="1"/>
+<coverage generated="1761135387107" clover="3.2.0">
+  <project timestamp="1761135387107" name="All files">
+    <metrics statements="33" coveredstatements="26" conditionals="35" coveredconditionals="20" methods="6" coveredmethods="4" elements="74" coveredelements="50" complexity="0" loc="33" ncloc="33" packages="1" files="1" classes="1"/>
     <file name="App.jsx" path="C:\Users\Jordan.Kane\GitHub\beeceptor-demo\src\App.jsx">
-      <metrics statements="33" coveredstatements="26" conditionals="35" coveredconditionals="15" methods="6" coveredmethods="4"/>
+      <metrics statements="33" coveredstatements="26" conditionals="35" coveredconditionals="20" methods="6" coveredmethods="4"/>
       <line num="3" count="1" type="stmt"/>
       <line num="7" count="1" type="cond" truecount="1" falsecount="1"/>
       <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
       <line num="9" count="1" type="stmt"/>
       <line num="13" count="6" type="stmt"/>
-      <line num="14" count="5" type="stmt"/>
-      <line num="15" count="5" type="stmt"/>
-      <line num="16" count="5" type="stmt"/>
-      <line num="17" count="5" type="stmt"/>
-      <line num="19" count="5" type="stmt"/>
+      <line num="14" count="6" type="stmt"/>
+      <line num="15" count="6" type="stmt"/>
+      <line num="16" count="6" type="stmt"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="19" count="6" type="stmt"/>
       <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
       <line num="21" count="0" type="stmt"/>
       <line num="22" count="0" type="stmt"/>
@@ -29,14 +29,14 @@
       <line num="37" count="1" type="stmt"/>
       <line num="39" count="1" type="stmt"/>
       <line num="40" count="1" type="stmt"/>
-      <line num="44" count="5" type="stmt"/>
-      <line num="46" count="5" type="stmt"/>
+      <line num="44" count="6" type="stmt"/>
+      <line num="46" count="6" type="stmt"/>
       <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="48" count="0" type="stmt"/>
-      <line num="54" count="5" type="stmt"/>
+      <line num="54" count="6" type="stmt"/>
       <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="56" count="0" type="stmt"/>
-      <line num="59" count="5" type="stmt"/>
+      <line num="59" count="6" type="stmt"/>
     </file>
   </project>
 </coverage>

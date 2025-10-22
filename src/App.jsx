@@ -58,10 +58,13 @@ export default function App() {
 
   return (
     <main>
-      <header style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <h1>Zendesk Demo Panel</h1>
-        <span className="badge">{state.toUpperCase()}</span>
-      </header>
+    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+  <h1>Zendesk Demo Panel</h1>
+  <span role="status" aria-live="polite" className="badge">
+    {state.toUpperCase()}
+  </span>
+</header>
+
 
       <div className="toolbar">
         <button className="primary" onClick={fetchData}>Fetch Order</button>
