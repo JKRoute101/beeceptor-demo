@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-const ENDPOINT = import.meta.env.VITE_BEECEPTOR_URL || '';
+const ENDPOINT = 'https://demo-app.free.beeceptor.com/ticket/43';
+
 
 export function formatInternalNote(order) {
   const id = order?.orderId ?? 'N/A';
@@ -40,11 +41,7 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    // Auto-fetch on first load so you can screenshot immediately
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useEffect(() => { fetchData(); }, []);
 
   const populateTicketFields = () => {
     if (!data) return;
@@ -73,12 +70,7 @@ export default function App() {
       </div>
 
       {state === 'loading' && <p>Loading…</p>}
-
-      {state === 'error' && (
-        <div className="alert" role="alert">
-          {errorMsg}
-        </div>
-      )}
+      {state === 'error' && <div className="alert" role="alert">{errorMsg}</div>}
 
       {state === 'ok' && data && (
         <section className="panel" aria-label="Order">
@@ -101,10 +93,6 @@ export default function App() {
           <pre>{note}</pre>
         </section>
       )}
-
-      <footer style={{marginTop: 20, color: '#666'}}>
-        <small>Set your Beeceptor URL in <code>.env</code> → <code>VITE_BEECEPTOR_URL</code></small>
-      </footer>
     </main>
-  )
+  );
 }

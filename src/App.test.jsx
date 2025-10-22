@@ -2,6 +2,12 @@ import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import App, { formatInternalNote } from './App'
 
+beforeAll(() => {
+  // Make sure tests see your Beeceptor endpoint
+  window.__APP_ENDPOINT__ = 'https://demo-app.free.beeceptor.com';
+});
+
+
 // Unit: formatter
 test('formatInternalNote builds correct summary', () => {
   const s = formatInternalNote({ orderId: 43, items: [4, 9, 17] })
