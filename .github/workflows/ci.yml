@@ -1,18 +1,29 @@
 name: CI
-
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm install
+
+      # Clean install for reproducible builds
+      - run: npm ci
+
+      # Debug: prove Jest is installed & show files present (case-sensitive on Linux)
+      - run: npx jest --version
+      - run: pwd && ls -la
+      - run: cat jest.config.cjs
+
+      # Tests
       - run: npm test
+
+      # Build (inject Beeceptor URL safely if you want a build artifact later)
       - run: npm run build
+        env:
+          VITE_BEECEPTOR_URL: ${{ secrets.VITE_BEECEPTOR_URL }}

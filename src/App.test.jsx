@@ -4,7 +4,10 @@ import App, { formatInternalNote } from './App'
 
 beforeAll(() => {
   // Make sure tests see your Beeceptor endpoint
-  window.__APP_ENDPOINT__ = 'https://demo-app.free.beeceptor.com';
+beforeAll(() => {
+  window.__APP_ENDPOINT__ = 'https://demo-app.free.beeceptor.com/ticket/43';
+});
+
 });
 
 
